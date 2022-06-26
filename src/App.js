@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 
 import Main from './pages/Main';
 import Register from './pages/Register';
+import Search from './pages/Search';
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
         sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         maxWidth={false}
       >
-        <Box sx={{ bgcolor: '#FFFFFF', width: '375px', height: '100vh' }}>
+        <Box sx={{ bgcolor: '#FFFFFF', width: '375px', height: '812px', border: '1px solid black' }}>
           <Routes>
+            <Route path="/" element={<Search />} />
             <Route path="/main" element={<Main />} />
             <Route path="/register" element={<Register />} />
           </Routes>
