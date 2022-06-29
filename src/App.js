@@ -6,6 +6,7 @@ import Container from '@mui/material/Container';
 
 import Main from './pages/Main';
 import Register from './pages/Register';
+import Matching from './pages/Matching';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/main" element={<Main />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/matching" element={<Matching />} />
           </Routes>
         </Box>
       </Container>
