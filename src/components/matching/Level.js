@@ -38,7 +38,7 @@ const Level = () => {
   };
 
   return (
-    <Box fullWidth>
+    <Box sx={{ marginBottom: '46px' }} fullWidth>
       <StyledLabel htmlFor="year">NTRP 레벨</StyledLabel>
       <Slider
         getAriaLabel={() => 'Temperature range'}
