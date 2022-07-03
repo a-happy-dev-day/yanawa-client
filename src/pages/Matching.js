@@ -1,4 +1,4 @@
-import { Box, Input, InputLabel, Slider, styled, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Box, Button, Input, InputLabel, Slider, styled, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import React, { useState } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Year from '../components/matching/Year';
@@ -19,6 +19,12 @@ const Matching = () => {
   const StyledInput = styled(Input)`
     font-size: 24px;
     color: #434343;
+  `;
+  const StyledButton = styled(Button)`
+    height: 50px;
+    margin-bottom: 50px;
+    background-color: #0027fd;
+    border-radius: 10px;
   `;
 
   return (
@@ -56,6 +62,9 @@ const Matching = () => {
         <NumberOfPeople />
         <Cost />
         <Comment />
+        <StyledButton fullWidth variant="contained">
+          매칭 만들기 완료
+        </StyledButton>
       </Box>
     </div>
   );
