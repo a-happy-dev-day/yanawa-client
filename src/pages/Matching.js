@@ -7,6 +7,7 @@ import Age from '../components/matching/Age';
 import Sex from '../components/matching/Sex';
 import Game from '../components/matching/Game';
 import NumberOfPeople from '../components/matching/NumberOfPeople';
+import Cost from '../components/matching/Cost';
 
 const Matching = () => {
   const StyledLabel = styled(InputLabel)`
@@ -51,6 +52,7 @@ const Matching = () => {
         <Sex />
         <Game />
         <NumberOfPeople />
+        <Cost />
       </Box>
     </div>
   );
