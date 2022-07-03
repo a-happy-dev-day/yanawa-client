@@ -8,6 +8,7 @@ import Sex from '../components/matching/Sex';
 import Game from '../components/matching/Game';
 import NumberOfPeople from '../components/matching/NumberOfPeople';
 import Cost from '../components/matching/Cost';
+import Comment from '../components/matching/Comment';
 
 const Matching = () => {
   const StyledLabel = styled(InputLabel)`
@@ -25,6 +26,7 @@ const Matching = () => {
       <Box
         sx={{
           height: '60px',
+          width: '375px',
           display: 'flex',
           alignItems: 'center',
           paddingLeft: '29px',
@@ -53,6 +55,7 @@ const Matching = () => {
         <Game />
         <NumberOfPeople />
         <Cost />
+        <Comment />
       </Box>
     </div>
   );
