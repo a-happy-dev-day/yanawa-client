@@ -1,4 +1,4 @@
-import { Box, Button, Input, InputLabel, Slider, styled, ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { Box, Button, Input, InputLabel, styled } from '@mui/material';
 import React, { useState } from 'react';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import Year from '../components/matching/Year';
@@ -9,8 +9,11 @@ import Game from '../components/matching/Game';
 import NumberOfPeople from '../components/matching/NumberOfPeople';
 import Cost from '../components/matching/Cost';
 import Comment from '../components/matching/Comment';
+import { useNavigate } from 'react-router';
 
 const Matching = () => {
+  const navigate = useNavigate();
+
   const StyledLabel = styled(InputLabel)`
     font-size: 12px;
     color: #707070;
@@ -42,7 +45,12 @@ const Matching = () => {
           zIndex: '10',
         }}
       >
-        <ArrowBackIosNewIcon sx={{ marginRight: '9px' }} />
+        <ArrowBackIosNewIcon
+          onClick={() => {
+            navigate(-1);
+          }}
+          sx={{ marginRight: '9px', cursor: 'pointer' }}
+        />
         매칭만들기
       </Box>
       <Box sx={{ padding: '104px 20px 0' }} component="form" noValidate autoComplete="off">
