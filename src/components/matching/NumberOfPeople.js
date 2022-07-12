@@ -1,4 +1,4 @@
-import { Box, styled, InputLabel, MenuItem, Select } from '@mui/material';
+import { Box, styled, InputLabel, MenuItem, Select, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
 const NumberOfPeople = () => {
@@ -24,19 +24,46 @@ const NumberOfPeople = () => {
     color: #707070;
     margin-bottom: 11px;
   `;
+
+  const StyledSelect = styled(Select)({
+    height: '42px',
+    backgroundColor: '#f4f4f4',
+    borderRadius: '10px',
+    fontSize: '12px',
+    
+  });
+
+  const StyledMenuItem = styled(MenuItem)`
+    background-color: #f4f4f4;
+    font-size: 12px;
+    padding: 13px 0 13px 16px;
+  `;
+
+  const Placeholder = styled(Typography)`
+    font-size: 12px;
+    color: #cbcbcb;
+  `;
+
   return (
     <Box sx={{ marginBottom: '44px' }} component="div">
       <StyledLabel htmlFor="people">모집인원</StyledLabel>
-      <Select placeholder="시범" fullWidth labelId="people" id="people" value={people} onChange={handleChange}>
-        <MenuItem value={1}>1명</MenuItem>
-        <MenuItem value={2}>2명</MenuItem>
-        <MenuItem value={3}>3명</MenuItem>
-        <MenuItem value={4}>4명</MenuItem>
-        <MenuItem value={5}>5명</MenuItem>
-        <MenuItem value={6}>6명</MenuItem>
-        <MenuItem value={7}>7명</MenuItem>
-        <MenuItem value={8}>8명</MenuItem>
-      </Select>
+      <StyledSelect
+        fullWidth
+        displayEmpty
+        renderValue={people !== 0 ? undefined : () => <Placeholder>모집 인원을 선택해 주세요 (최대 8명)</Placeholder>}
+        id="people"
+        value={people}
+        onChange={handleChange}
+      >
+        <StyledMenuItem value={1}>1명</StyledMenuItem>
+        <StyledMenuItem value={2}>2명</StyledMenuItem>
+        <StyledMenuItem value={3}>3명</StyledMenuItem>
+        <StyledMenuItem value={4}>4명</StyledMenuItem>
+        <StyledMenuItem value={5}>5명</StyledMenuItem>
+        <StyledMenuItem value={6}>6명</StyledMenuItem>
+        <StyledMenuItem value={7}>7명</StyledMenuItem>
+        <StyledMenuItem value={8}>8명</StyledMenuItem>
+      </StyledSelect>
     </Box>
   );
 };
