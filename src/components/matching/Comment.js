@@ -8,7 +8,7 @@ const Comment = () => {
     margin-bottom: 11px;
   `;
 
-  const StaledTextarea = styled(TextareaAutosize)`
+  const StyledTextarea = styled(TextareaAutosize)`
     width: 100%;
     height: 125px;
     padding: 10px;
@@ -18,7 +18,7 @@ const Comment = () => {
   return (
     <Box sx={{ marginBottom: '51px' }} component="div">
       <StyledLabel htmlFor="comment">하고 싶은 말</StyledLabel>
-      <StaledTextarea
+      <StyledTextarea
         id="comment"
         placeholder="매칭할 상대에게 하고 싶은 말을 적어주세요."
         style={{ height: '125px' }}

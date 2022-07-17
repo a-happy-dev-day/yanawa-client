@@ -30,7 +30,6 @@ const NumberOfPeople = () => {
     backgroundColor: '#f4f4f4',
     borderRadius: '10px',
     fontSize: '12px',
-    
   });
 
   const StyledMenuItem = styled(MenuItem)`
@@ -47,7 +46,7 @@ const NumberOfPeople = () => {
   return (
     <Box sx={{ marginBottom: '44px' }} component="div">
       <StyledLabel htmlFor="people">모집인원</StyledLabel>
-      <StyledSelect
+      {/* <StyledSelect
         fullWidth
         displayEmpty
         renderValue={people !== 0 ? undefined : () => <Placeholder>모집 인원을 선택해 주세요 (최대 8명)</Placeholder>}
@@ -63,7 +62,7 @@ const NumberOfPeople = () => {
         <StyledMenuItem value={6}>6명</StyledMenuItem>
         <StyledMenuItem value={7}>7명</StyledMenuItem>
         <StyledMenuItem value={8}>8명</StyledMenuItem>
-      </StyledSelect>
+      </StyledSelect> */}
     </Box>
   );
 };

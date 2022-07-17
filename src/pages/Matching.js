@@ -13,22 +13,39 @@ import { useNavigate } from 'react-router';
 
 const Matching = () => {
   const navigate = useNavigate();
+  const [matchingData, setMatchingData] = useState({
+    annual: '',
+    minimumLevel: '',
+    maximumLevel: '',
+    ageOfRecruitment: '',
+    sexOfRecruitment: '',
+    preferenceGame: '',
+    numberOfNumber: '',
+    costOfCourtPerPerson: '',
+    details: '',
+  });
 
-  const StyledLabel = styled(InputLabel)`
-    font-size: 12px;
-    color: #707070;
-    margin-bottom: 11px;
-  `;
-  const StyledInput = styled(Input)`
-    font-size: 24px;
-    color: #434343;
-  `;
-  const StyledButton = styled(Button)`
-    height: 50px;
-    margin-bottom: 50px;
-    background-color: #0027fd;
-    border-radius: 10px;
-  `;
+  const {
+    annual,
+    minimumLevel,
+    maximumLevel,
+    ageOfRecruitment,
+    sexOfRecruitment,
+    preferenceGame,
+    numberOfNumber,
+    costOfCourtPerPerson,
+    details,
+  } = matchingData;
+
+  const onChangeHandler = (e) => {
+    const { value, name } = e.target;
+    setMatchingData({
+      ...matchingData,
+      [name]: value,
+    });
+  };
+
+  console.log(matchingData);
 
   return (
     <div style={{ height: '100vh', overflow: 'scroll' }}>
@@ -62,7 +79,7 @@ const Matching = () => {
           <StyledLabel htmlFor="date">일시</StyledLabel>
           <StyledInput fullWidth disableUnderline={true} id="date" />
         </Box>
-        <Year />
+        <Year onChangeHandler={onChangeHandler} matchingData={matchingData} setMatchingData={setMatchingData} />
         <Level />
         <Age />
         <Sex />
@@ -79,3 +96,19 @@ const Matching = () => {
 };
 
 export default Matching;
+
+const StyledLabel = styled(InputLabel)`
+  font-size: 12px;
+  color: #707070;
+  margin-bottom: 11px;
+`;
+const StyledInput = styled(Input)`
+  font-size: 24px;
+  color: #434343;
+`;
+const StyledButton = styled(Button)`
+  height: 50px;
+  margin-bottom: 50px;
+  background-color: #0027fd;
+  border-radius: 10px;
+`;
