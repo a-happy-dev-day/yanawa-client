@@ -1,31 +1,27 @@
 import { Box, InputLabel, styled, ToggleButton, ToggleButtonGroup } from '@mui/material';
 import React from 'react';
 
-const Year = ({ matchingData, setMatchingData }) => {
-  const onChangeHandler = (e) => {
-    const { value } = e.target;
-
-    setMatchingData({
-      ...matchingData,
-      annual: value,
-    });
-  };
-
+const Year = ({ onChangeHandler, annual }) => {
   return (
     <Box sx={{ marginBottom: '51px' }} component="div">
       <StyledLabel htmlFor="annual">구력</StyledLabel>
       <StyledToggleButtonGroup
         id="annual"
         onChange={onChangeHandler}
-        value={matchingData.annual}
-        name="annual"
+        value={annual}
         exclusive
         fullWidth
         sx={{ display: 'flex', justifyContent: 'space-between' }}
       >
-        <StyledToggleButton value="2">2년 이하</StyledToggleButton>
-        <StyledToggleButton value="2 - 5 년">2 - 5 년</StyledToggleButton>
-        <StyledToggleButton value="5년 이상">5년 이상</StyledToggleButton>
+        <StyledToggleButton name="annual" value="2">
+          2년 이하
+        </StyledToggleButton>
+        <StyledToggleButton name="annual" value="2 - 5 년">
+          2 - 5 년
+        </StyledToggleButton>
+        <StyledToggleButton name="annual" value="5년 이상">
+          5년 이상
+        </StyledToggleButton>
       </StyledToggleButtonGroup>
     </Box>
   );

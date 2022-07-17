@@ -79,14 +79,14 @@ const Matching = () => {
           <StyledLabel htmlFor="date">일시</StyledLabel>
           <StyledInput fullWidth disableUnderline={true} id="date" />
         </Box>
-        <Year onChangeHandler={onChangeHandler} matchingData={matchingData} setMatchingData={setMatchingData} />
+        <Year onChangeHandler={onChangeHandler} annual={annual} />
         <Level />
-        <Age />
-        <Sex />
-        <Game />
+        <Age onChangeHandler={onChangeHandler} ageOfRecruitment={ageOfRecruitment} />
+        <Sex onChangeHandler={onChangeHandler} sexOfRecruitment={sexOfRecruitment} />
+        <Game onChangeHandler={onChangeHandler} preferenceGame={preferenceGame} />
         <NumberOfPeople />
         <Cost />
-        <Comment />
+        <Comment onChangeHandler={onChangeHandler} details={details} />
         <StyledButton fullWidth variant="contained">
           매칭 만들기 완료
         </StyledButton>
