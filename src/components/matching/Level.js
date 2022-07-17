@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box, InputLabel, Slider, styled } from '@mui/material';
 
-const Level = () => {
+const Level = ({ matchingData, setMatchingData }) => {
   const [level, setLevel] = useState([1, 2.5]);
+
+  useEffect(() => {
+    setMatchingData({
+      ...matchingData,
+      minimumLevel: level[0],
+      maximumLevel: level[1],
+    });
+  }, [level]);
 
   const marks = [
     {
@@ -27,12 +35,6 @@ const Level = () => {
     },
   ];
 
-  const StyledLabel = styled(InputLabel)`
-    font-size: 12px;
-    color: #707070;
-    margin-bottom: 11px;
-  `;
-
   const handleLevelChange = (event, newLevel) => {
     setLevel(newLevel);
   };
@@ -56,3 +58,9 @@ const Level = () => {
 };
 
 export default Level;
+
+const StyledLabel = styled(InputLabel)`
+  font-size: 12px;
+  color: #707070;
+  margin-bottom: 11px;
+`;

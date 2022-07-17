@@ -20,7 +20,7 @@ const Matching = () => {
     ageOfRecruitment: '',
     sexOfRecruitment: '',
     preferenceGame: '',
-    numberOfNumber: '',
+    numberOfNumber: 0,
     costOfCourtPerPerson: '',
     details: '',
   });
@@ -39,6 +39,7 @@ const Matching = () => {
 
   const onChangeHandler = (e) => {
     const { value, name } = e.target;
+
     setMatchingData({
       ...matchingData,
       [name]: value,
@@ -80,11 +81,11 @@ const Matching = () => {
           <StyledInput fullWidth disableUnderline={true} id="date" />
         </Box>
         <Year onChangeHandler={onChangeHandler} annual={annual} />
-        <Level />
+        <Level matchingData={matchingData} setMatchingData={setMatchingData} />
         <Age onChangeHandler={onChangeHandler} ageOfRecruitment={ageOfRecruitment} />
         <Sex onChangeHandler={onChangeHandler} sexOfRecruitment={sexOfRecruitment} />
         <Game onChangeHandler={onChangeHandler} preferenceGame={preferenceGame} />
-        <NumberOfPeople />
+        <NumberOfPeople onChangeHandler={onChangeHandler} numberOfNumber={numberOfNumber} />
         <Cost />
         <Comment onChangeHandler={onChangeHandler} details={details} />
         <StyledButton fullWidth variant="contained">
