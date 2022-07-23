@@ -21,21 +21,12 @@ const Matching = () => {
     sexOfRecruitment: '',
     preferenceGame: '',
     numberOfNumber: 0,
-    costOfCourtPerPerson: '',
+    costOfCourtPerPerson: 0,
     details: '',
   });
+  console.log(matchingData);
 
-  const {
-    annual,
-    minimumLevel,
-    maximumLevel,
-    ageOfRecruitment,
-    sexOfRecruitment,
-    preferenceGame,
-    numberOfNumber,
-    costOfCourtPerPerson,
-    details,
-  } = matchingData;
+  const { annual, ageOfRecruitment, sexOfRecruitment, preferenceGame, numberOfNumber, details } = matchingData;
 
   const onChangeHandler = (e) => {
     const { value, name } = e.target;
@@ -45,8 +36,6 @@ const Matching = () => {
       [name]: value,
     });
   };
-
-  console.log(matchingData);
 
   return (
     <div style={{ height: '100vh', overflow: 'scroll' }}>
@@ -86,7 +75,7 @@ const Matching = () => {
         <Sex onChangeHandler={onChangeHandler} sexOfRecruitment={sexOfRecruitment} />
         <Game onChangeHandler={onChangeHandler} preferenceGame={preferenceGame} />
         <NumberOfPeople onChangeHandler={onChangeHandler} numberOfNumber={numberOfNumber} />
-        <Cost />
+        <Cost matchingData={matchingData} setMatchingData={setMatchingData} />
         <Comment onChangeHandler={onChangeHandler} details={details} />
         <StyledButton fullWidth variant="contained">
           매칭 만들기 완료
