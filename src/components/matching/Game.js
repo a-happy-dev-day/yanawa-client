@@ -13,10 +13,10 @@ const Game = ({ onChangeHandler, preferenceGame }) => {
         fullWidth
         sx={{ display: 'flex', gap: '11px' }}
       >
-        <StyledToggleButton name="preferenceGame" value="매칭">
+        <StyledToggleButton name="preferenceGame" value="matching">
           매칭
         </StyledToggleButton>
-        <StyledToggleButton name="preferenceGame" value="랠리">
+        <StyledToggleButton name="preferenceGame" value="rally">
           랠리
         </StyledToggleButton>
       </StyledToggleButtonGroup>

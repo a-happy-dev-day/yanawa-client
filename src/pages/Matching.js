@@ -14,10 +14,10 @@ import { useNavigate } from 'react-router';
 const Matching = () => {
   const navigate = useNavigate();
   const [matchingData, setMatchingData] = useState({
-    annual: '',
-    minimumLevel: '',
-    maximumLevel: '',
-    ageOfRecruitment: '',
+    annual: 2,
+    minimumLevel: 1,
+    maximumLevel: 2.5,
+    ageOfRecruitment: 0,
     sexOfRecruitment: '',
     preferenceGame: '',
     numberOfNumber: 0,
@@ -29,7 +29,11 @@ const Matching = () => {
   const { annual, ageOfRecruitment, sexOfRecruitment, preferenceGame, numberOfNumber, details } = matchingData;
 
   const onChangeHandler = (e) => {
-    const { value, name } = e.target;
+    let { value, name } = e.target;
+
+    if (name == 'annual' || name == 'ageOfRecruitment') {
+      value = Number(value);
+    }
 
     setMatchingData({
       ...matchingData,

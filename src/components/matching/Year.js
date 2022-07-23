@@ -8,7 +8,7 @@ const Year = ({ onChangeHandler, annual }) => {
       <StyledToggleButtonGroup
         id="annual"
         onChange={onChangeHandler}
-        value={annual}
+        value={String(annual)}
         exclusive
         fullWidth
         sx={{ display: 'flex', justifyContent: 'space-between' }}
@@ -16,10 +16,10 @@ const Year = ({ onChangeHandler, annual }) => {
         <StyledToggleButton name="annual" value="2">
           2년 이하
         </StyledToggleButton>
-        <StyledToggleButton name="annual" value="2 - 5 년">
+        <StyledToggleButton name="annual" value="4">
           2 - 5 년
         </StyledToggleButton>
-        <StyledToggleButton name="annual" value="5년 이상">
+        <StyledToggleButton name="annual" value="5">
           5년 이상
         </StyledToggleButton>
       </StyledToggleButtonGroup>

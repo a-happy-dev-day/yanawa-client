@@ -7,25 +7,25 @@ const Age = ({ ageOfRecruitment, onChangeHandler }) => {
       <StyledLabel htmlFor="age">모집연령</StyledLabel>
       <StyledToggleButtonGroup
         onChange={onChangeHandler}
-        value={ageOfRecruitment}
+        value={String(ageOfRecruitment)}
         name="ageOfRecruitment"
         exclusive
         fullWidth
         sx={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}
       >
-        <StyledToggleButton name="ageOfRecruitment" value="20대">
+        <StyledToggleButton name="ageOfRecruitment" value="20">
           20대
         </StyledToggleButton>
-        <StyledToggleButton name="ageOfRecruitment" value="30대">
+        <StyledToggleButton name="ageOfRecruitment" value="30">
           30대
         </StyledToggleButton>
-        <StyledToggleButton name="ageOfRecruitment" value="40대">
+        <StyledToggleButton name="ageOfRecruitment" value="40">
           40대
         </StyledToggleButton>
-        <StyledToggleButton name="ageOfRecruitment" value="50대 이상">
+        <StyledToggleButton name="ageOfRecruitment" value="50">
           50대 이상
         </StyledToggleButton>
-        <StyledToggleButton name="ageOfRecruitment" value="무관">
+        <StyledToggleButton name="ageOfRecruitment" value="0">
           무관
         </StyledToggleButton>
       </StyledToggleButtonGroup>
