@@ -12,6 +12,16 @@ const NumberOfPeople = ({ onChangeHandler, numberOfNumber }) => {
     { value: 7, name: '7명' },
     { value: 8, name: '8명' },
   ];
+  const ITEM_HEIGHT = 42;
+  const ITEM_PADDING_TOP = 8;
+  const MenuProps = {
+    PaperProps: {
+      style: {
+        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+        width: 250,
+      },
+    },
+  };
 
   return (
     <Box sx={{ marginBottom: '44px' }} component="div">
@@ -19,6 +29,7 @@ const NumberOfPeople = ({ onChangeHandler, numberOfNumber }) => {
       <StyledSelect
         fullWidth
         displayEmpty
+        defaultValue={numberOfNumber}
         renderValue={
           numberOfNumber !== 0 ? undefined : () => <Placeholder>모집 인원을 선택해 주세요 (최대 8명)</Placeholder>
         }
@@ -26,9 +37,12 @@ const NumberOfPeople = ({ onChangeHandler, numberOfNumber }) => {
         value={numberOfNumber}
         onChange={onChangeHandler}
         name="numberOfNumber"
+        MenuProps={MenuProps}
       >
-        {options.map((option) => (
-          <StyledMenuItem value={option.value}>{option.name}</StyledMenuItem>
+        {options.map((option, id) => (
+          <StyledMenuItem key={id} value={option.value}>
+            {option.name}
+          </StyledMenuItem>
         ))}
       </StyledSelect>
     </Box>
@@ -44,14 +58,11 @@ const StyledLabel = styled(InputLabel)`
 `;
 
 const StyledSelect = styled(Select)({
-  height: '42px',
-  backgroundColor: '#f4f4f4',
   borderRadius: '10px',
   fontSize: '12px',
 });
 
 const StyledMenuItem = styled(MenuItem)`
-  background-color: #f4f4f4;
   font-size: 12px;
   padding: 13px 0 13px 16px;
 `;
