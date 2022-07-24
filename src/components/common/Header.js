@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import { Box } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 
-const Header = ({ title }) => {
+const Header = ({ title, bgColor, color }) => {
   const navigate = useNavigate();
 
   return (
@@ -17,7 +17,8 @@ const Header = ({ title }) => {
         paddingLeft: '29px',
         marginBottom: '44px',
         position: 'absolute',
-        backgroundColor: '#fff',
+        backgroundColor: bgColor,
+        color: color,
         zIndex: '10',
       }}
     >
