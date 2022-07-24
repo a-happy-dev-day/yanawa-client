@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
 
 import { Box, Button, Input, InputLabel, styled } from '@mui/material';
 
@@ -44,7 +43,7 @@ const Matching = () => {
 
   return (
     <div style={{ height: '100vh', overflow: 'scroll' }}>
-      <Header title="매칭만들기" />
+      <Header color="#000" bgColor="#fff" title="매칭만들기" />
       <Box sx={{ padding: '104px 20px 0' }} component="form" noValidate autoComplete="off">
         <Box sx={{ marginBottom: '51px' }} component="div">
           <StyledLabel htmlFor="court">코트장 선택</StyledLabel>
