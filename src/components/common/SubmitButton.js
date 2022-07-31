@@ -6,6 +6,7 @@ const SubmitButton = ({ title, bgcolor }) => {
     height: '50px',
     backgroundColor: bgcolor,
     borderRadius: '10px',
+    marginBottom: '100px',
   });
 
   return (

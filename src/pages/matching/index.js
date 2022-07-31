@@ -11,6 +11,7 @@ import NumberOfPeople from './NumberOfPeople';
 import Cost from './Cost';
 import Comment from './Comment';
 import Header from '../../components/common/Header';
+import SubmitButton from '../../components/common/SubmitButton';
 
 const Matching = () => {
   const [matchingData, setMatchingData] = useState({
@@ -61,9 +62,7 @@ const Matching = () => {
         <NumberOfPeople onChangeHandler={onChangeHandler} numberOfNumber={numberOfNumber} />
         <Cost matchingData={matchingData} setMatchingData={setMatchingData} />
         <Comment onChangeHandler={onChangeHandler} details={details} />
-        <StyledButton fullWidth variant="contained">
-          매칭 만들기 완료
-        </StyledButton>
+        <SubmitButton title="매칭 만들기 완료" bgcolor="#0027FD" />
       </Box>
     </div>
   );
@@ -79,10 +78,4 @@ const StyledLabel = styled(InputLabel)`
 const StyledInput = styled(Input)`
   font-size: 24px;
   color: #434343;
-`;
-const StyledButton = styled(Button)`
-  height: 50px;
-  margin-bottom: 50px;
-  background-color: #0027fd;
-  border-radius: 10px;
 `;
