@@ -9,8 +9,10 @@ import profile from '../../assets/images/profile.png';
 import crown from '../../assets/images/crown.png';
 import Header from '../../components/common/Header';
 import SubmitButton from '../../components/common/SubmitButton';
+import { useNavigate } from 'react-router-dom';
 
 const MatchingResult = () => {
+  const navigate = useNavigate();
   const [matchingItems, setMatchingItems] = useState([
     {
       title: '코트',
@@ -50,6 +52,10 @@ const MatchingResult = () => {
     },
   ]);
 
+  const onClickHandler = () => {
+    navigate('../');
+  };
+
   return (
     <div style={{ height: '100vh', position: 'relative', backgroundColor: '#f9f9f9', overflow: 'scroll' }}>
       <Header color="#fff" title="자세히 보기" />
@@ -62,7 +68,7 @@ const MatchingResult = () => {
           <ShareOutlinedIcon sx={{ color: '#000' }} />
         </Avatar>
       </IconContainer>
-      <Box sx={{ padding: '0 20px', marginTop: '-40px', marginBottom: '175px' }}>
+      <Box sx={{ padding: '0 20px', marginTop: '-40px', marginBottom: '51px' }}>
         <Box
           sx={{
             display: 'flex',
@@ -123,7 +129,7 @@ const MatchingResult = () => {
             <Avatar sx={{ width: 50, height: 50 }} />
           </Box>
         </Box>
-        <SubmitButton bgcolor="#0027fd" title="참여하기"></SubmitButton>
+        <SubmitButton bgcolor="#343a40" title="홈으로" onClickHandler={onClickHandler}></SubmitButton>
       </Box>
     </div>
   );
@@ -147,7 +153,7 @@ const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 16,
   height: 16,
   background: `no-repeat center/12px 8px url(${crown}) #fff`,
-  '& 	.MuiAvatar-fallback': {
+  '& .MuiAvatar-fallback': {
     display: 'none',
   },
 }));

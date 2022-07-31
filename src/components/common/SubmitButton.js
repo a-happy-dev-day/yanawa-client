@@ -1,7 +1,7 @@
 import { Button, styled } from '@mui/material';
 import React from 'react';
 
-const SubmitButton = ({ title, bgcolor }) => {
+const SubmitButton = ({ title, bgcolor, onClickHandler }) => {
   const StyledButton = styled(Button)({
     height: '50px',
     backgroundColor: bgcolor,
@@ -10,7 +10,7 @@ const SubmitButton = ({ title, bgcolor }) => {
   });
 
   return (
-    <StyledButton variant="contained" fullWidth>
+    <StyledButton onClick={onClickHandler} variant="contained" fullWidth>
       {title}
     </StyledButton>
   );
