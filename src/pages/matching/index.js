@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Box, Button, Input, InputLabel, styled } from '@mui/material';
 
+import API from '../../api/apiCall';
 import Year from './Year';
 import Level from './Level';
 import Age from './Age';
@@ -15,6 +16,10 @@ import SubmitButton from '../../components/common/SubmitButton';
 
 const Matching = () => {
   const [matchingData, setMatchingData] = useState({
+    courtId: '2dcc2c55-2d15-4c1a-a940-cc9c75a96155',
+    date: '2022-07-06',
+    startTime: '18:34:50.994784',
+    endTime: '22:34:50.994803',
     annual: 2,
     minimumLevel: 1,
     maximumLevel: 2.5,
@@ -24,6 +29,7 @@ const Matching = () => {
     numberOfNumber: 0,
     costOfCourtPerPerson: 0,
     details: '',
+    hostId: '145b8a89-b20b-4b30-bee3-38f092d9bec6',
   });
   console.log(matchingData);
 
@@ -40,6 +46,17 @@ const Matching = () => {
       ...matchingData,
       [name]: value,
     });
+  };
+
+  const saveMatchingData = async () => {
+    console.log('matchingData', matchingData);
+    try {
+      const response = await API.post('http://3.143.143.122:8080/v1/api/matchings', matchingData);
+
+      console.log('응답data', response.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -62,7 +79,7 @@ const Matching = () => {
         <NumberOfPeople onChangeHandler={onChangeHandler} numberOfNumber={numberOfNumber} />
         <Cost matchingData={matchingData} setMatchingData={setMatchingData} />
         <Comment onChangeHandler={onChangeHandler} details={details} />
-        <SubmitButton title="매칭 만들기 완료" bgcolor="#0027FD" />
+        <SubmitButton title="매칭 만들기 완료" bgcolor="#0027FD" onClickHandler={saveMatchingData} />
       </Box>
     </div>
   );
