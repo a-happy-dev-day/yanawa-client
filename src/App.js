@@ -8,6 +8,7 @@ import Main from './pages/Main';
 import Register from './pages/Register';
 import Matching from './pages/matching';
 import MatchingResult from './pages/matchingResult';
+import MatchingDetails from './pages/matchingDetails';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/matching" element={<Matching />} />
             <Route path="/matchingResult" element={<MatchingResult />} />
+            <Route path="/matchingDetails" element={<MatchingDetails />} />
           </Routes>
         </Box>
       </Container>

@@ -9,10 +9,8 @@ import profile from '../../assets/images/profile.png';
 import crown from '../../assets/images/crown.png';
 import Header from '../../components/common/Header';
 import SubmitButton from '../../components/common/SubmitButton';
-import { useNavigate } from 'react-router-dom';
 
-const MatchingResult = () => {
-  const navigate = useNavigate();
+const MatchingDetails = () => {
   const [matchingItems, setMatchingItems] = useState([
     {
       title: '코트',
@@ -52,13 +50,9 @@ const MatchingResult = () => {
     },
   ]);
 
-  const onClickHandler = () => {
-    navigate('../');
-  };
-
   return (
     <div style={{ height: '100vh', position: 'relative', backgroundColor: '#f9f9f9', overflow: 'scroll' }}>
-      <Header color="#fff" title="매칭 만들기 완료" />
+      <Header color="#fff" title="자세히 보기" />
       <StyledBgImg />
       <IconContainer>
         <Avatar sx={{ background: '#fff', marginRight: '10px' }}>
@@ -92,7 +86,7 @@ const MatchingResult = () => {
           </Box>
           <ArrowForwardIosIcon fontSize="small" />
         </Box>
-        <Box sx={{ backgroundColor: '#fff', borderRadius: '10px', paddingX: '16px', marginBottom: '24px' }}>
+        <Box sx={{ backgroundColor: '#fff', borderRadius: '10px', paddingX: '16px' }}>
           <List sx={{ padding: 0 }}>
             {matchingItems.map((item) => (
               <ListItem key={item.title} sx={{ padding: '16px 0 18px', borderBottom: '1px solid #F4F4F4' }}>
@@ -108,13 +102,34 @@ const MatchingResult = () => {
             </Box>
           </List>
         </Box>
-        <SubmitButton bgcolor="#343a40" title="홈으로" onClickHandler={onClickHandler}></SubmitButton>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '15px 17px 15px 20px',
+            backgroundColor: '#fff',
+            borderRadius: '10px',
+            margin: '10px 0 24px',
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Typography sx={{ fontSize: '12px', fontWeight: '500', color: '#292929' }}>매칭멤버</Typography>
+          </Box>
+          <Box sx={{ display: 'flex' }}>
+            <Avatar sx={{ width: 50, height: 50, marginRight: '5px' }} />
+            <Avatar sx={{ width: 50, height: 50, marginRight: '5px' }} />
+            <Avatar sx={{ width: 50, height: 50, marginRight: '5px' }} />
+            <Avatar sx={{ width: 50, height: 50 }} />
+          </Box>
+        </Box>
+        <SubmitButton bgcolor="#343a40" title="참여하기"></SubmitButton>
       </Box>
     </div>
   );
 };
 
-export default MatchingResult;
+export default MatchingDetails;
 
 const StyledBgImg = styled(Box)({
   height: '210px',
