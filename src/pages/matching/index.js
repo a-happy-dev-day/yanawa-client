@@ -13,6 +13,7 @@ import Cost from './Cost';
 import Comment from './Comment';
 import Header from '../../components/common/Header';
 import SubmitButton from '../../components/common/SubmitButton';
+import MatchingDate from './MatchingDate';
 
 const Matching = () => {
   const [matchingData, setMatchingData] = useState({
@@ -69,7 +70,7 @@ const Matching = () => {
         </Box>
         <Box sx={{ marginBottom: '51px' }} component="div">
           <StyledLabel htmlFor="date">일시</StyledLabel>
-          <StyledInput fullWidth disableUnderline={true} id="date" />
+          <MatchingDate />
         </Box>
         <Year onChangeHandler={onChangeHandler} annual={annual} />
         <Level matchingData={matchingData} setMatchingData={setMatchingData} />
