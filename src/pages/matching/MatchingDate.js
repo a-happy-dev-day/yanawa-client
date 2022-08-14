@@ -8,11 +8,14 @@ import DatePicker from 'react-datepicker';
 
 import 'react-datepicker/dist/react-datepicker.css';
 
-const MatchingDate = () => {
+const MatchingDate = ({ matchingData, setMatchingData }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   const onChange = (dates) => {
-    setStartDate(dates);
+    setMatchingData({
+      ...matchingData,
+      date: dates,
+    });
   };
 
   return (
@@ -21,7 +24,7 @@ const MatchingDate = () => {
         minDate={new Date()}
         locale={ko}
         dateFormat="yyyy년 MM월 dd일"
-        selected={startDate}
+        selected={matchingData.date}
         onChange={onChange}
       />
     </Box>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Box, Button, Input, InputLabel, styled } from '@mui/material';
+import { Box, Button, Input, InputLabel, styled, TextField } from '@mui/material';
 
 import API from '../../api/apiCall';
 import Year from './Year';
@@ -18,7 +18,7 @@ import MatchingDate from './MatchingDate';
 const Matching = () => {
   const [matchingData, setMatchingData] = useState({
     courtId: '2dcc2c55-2d15-4c1a-a940-cc9c75a96155',
-    date: '2022-07-06',
+    date: new Date(),
     startTime: '18:34:50.994784',
     endTime: '22:34:50.994803',
     annual: 2,
@@ -27,7 +27,7 @@ const Matching = () => {
     ageOfRecruitment: 0,
     sexOfRecruitment: '',
     preferenceGame: '',
-    numberOfNumber: 0,
+    numberOfNumber: '',
     costOfCourtPerPerson: 0,
     details: '',
     hostId: '145b8a89-b20b-4b30-bee3-38f092d9bec6',
@@ -70,7 +70,14 @@ const Matching = () => {
         </Box>
         <Box sx={{ marginBottom: '51px' }} component="div">
           <StyledLabel htmlFor="date">일시</StyledLabel>
-          <MatchingDate />
+          <MatchingDate matchingData={matchingData} setMatchingData={setMatchingData} />
+        </Box>
+        <Box sx={{ marginBottom: '51px' }} component="div">
+          <StyledLabel htmlFor="date">시간</StyledLabel>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <TimeInput type="time" name="startTime" onChange={onChangeHandler} />
+            <TimeInput type="time" name="endTime" onChange={onChangeHandler} />
+          </Box>
         </Box>
         <Year onChangeHandler={onChangeHandler} annual={annual} />
         <Level matchingData={matchingData} setMatchingData={setMatchingData} />
@@ -96,4 +103,8 @@ const StyledLabel = styled(InputLabel)`
 const StyledInput = styled(Input)`
   font-size: 24px;
   color: #434343;
+`;
+
+const TimeInput = styled(TextField)`
+  width: 48%;
 `;

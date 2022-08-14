@@ -31,7 +31,7 @@ const NumberOfPeople = ({ onChangeHandler, numberOfNumber }) => {
         displayEmpty
         defaultValue={numberOfNumber}
         renderValue={
-          numberOfNumber !== 0 ? undefined : () => <Placeholder>모집 인원을 선택해 주세요 (최대 8명)</Placeholder>
+          numberOfNumber !== '' ? undefined : () => <Placeholder>모집 인원을 선택해 주세요 (최대 8명)</Placeholder>
         }
         id="people"
         value={numberOfNumber}
