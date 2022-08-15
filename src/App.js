@@ -8,6 +8,7 @@ import Matching from './pages/matching';
 import MatchingResult from './pages/matchingResult';
 import MatchingDetails from './pages/matchingDetails';
 import Splash from './pages/Splash';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         <Box sx={{ bgcolor: '#FFFFFF', width: '375px', height: '100vh' }}>
           <Routes>
             <Route path="/" element={<Splash />} />
-
+            <Route path="/login" element={<Login />} />
             <Route path="/matching" element={<Matching />} />
             <Route path="/matchingResult" element={<MatchingResult />} />
             <Route path="/matchingDetails" element={<MatchingDetails />} />
