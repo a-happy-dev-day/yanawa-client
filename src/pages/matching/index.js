@@ -61,7 +61,7 @@ const Matching = () => {
   };
 
   return (
-    <div style={{ height: '100vh', overflow: 'scroll' }}>
+    <div style={{ height: '100vh', overflow: 'scroll', position: 'relative' }}>
       <Header color="#000" bgColor="#fff" title="매칭만들기" />
       <Box sx={{ padding: '104px 20px 0' }} component="form" noValidate autoComplete="off">
         <Box sx={{ marginBottom: '51px' }} component="div">

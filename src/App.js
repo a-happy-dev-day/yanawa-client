@@ -9,6 +9,7 @@ import MatchingResult from './pages/matchingResult';
 import MatchingDetails from './pages/matchingDetails';
 import Splash from './pages/Splash';
 import Login from './pages/Login';
+import BasicUserInformation from './pages/BasicUserInfomation';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Splash />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/userInfo" element={<BasicUserInformation />} />
             <Route path="/matching" element={<Matching />} />
             <Route path="/matchingResult" element={<MatchingResult />} />
             <Route path="/matchingDetails" element={<MatchingDetails />} />
