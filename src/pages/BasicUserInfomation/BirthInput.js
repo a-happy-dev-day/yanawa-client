@@ -8,15 +8,19 @@ import ko from 'date-fns/locale/ko';
 
 
 
-const BirthInput = () => {
-
-    const [birthday, setBirthDay] = useState();
+const BirthInput = ({userInfoData, setUserInfoPage, setUserInfoData}) => {
 
 
-    const onChange = (dates) => {
-        setBirthDay(dates)
+
+    const onChangeHandler = (dates) => {
+        setUserInfoData({...userInfoData, birth:dates})
 
     };
+
+    const onClickHandler = () => {
+        setUserInfoPage(4)
+    }
+
     return (
         <Box>
             <form>
@@ -24,12 +28,12 @@ const BirthInput = () => {
                 <StyledDatePicker
                     locale={ko}
                     dateFormat="yyyy년 MM월 dd일"
-                    selected={birthday}
-                    onChange={onChange}
+                    selected={userInfoData.birth}
+                    onChange={onChangeHandler}
                     placeholderText="YYYY/MM/DD"
                 />
                 <Text></Text>
-                <StyledButton fullWidth>다음으로 (3/4)</StyledButton>
+                <StyledButton onClick={onClickHandler} fullWidth>다음으로 (3/4)</StyledButton>
             </form>
         </Box>
     );
