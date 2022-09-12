@@ -10,7 +10,7 @@ import ko from 'date-fns/locale/ko';
 
 const BirthInput = () => {
 
-    const [birthday, setBirthDay] = useState(new Date());
+    const [birthday, setBirthDay] = useState();
 
 
     const onChange = (dates) => {
@@ -26,6 +26,7 @@ const BirthInput = () => {
                     dateFormat="yyyy년 MM월 dd일"
                     selected={birthday}
                     onChange={onChange}
+                    placeholderText="YYYY/MM/DD"
                 />
                 <Text></Text>
                 <StyledButton fullWidth>다음으로 (3/4)</StyledButton>
