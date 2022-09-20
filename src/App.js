@@ -4,8 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 
-import Main from './pages/Main';
-import Register from './pages/Register';
 import Matching from './pages/matching';
 import MatchingResult from './pages/matchingResult';
 import MatchingDetails from './pages/matchingDetails';
@@ -13,6 +11,10 @@ import Review from './pages/review';
 import ReviewDetails from './pages/reviewDetails';
 import MyInfo from './pages/myInfo';
 import Setting from './pages/setting';
+import Splash from './pages/Splash';
+import Login from './pages/Login';
+import BasicUserInformation from './pages/BasicUserInfomation';
+
 
 function App() {
   return (
@@ -25,8 +27,9 @@ function App() {
       >
         <Box sx={{ bgcolor: '#FFFFFF', width: '375px', height: '100vh' }}>
           <Routes>
-            <Route path="/main" element={<Main />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Splash />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/userInfo" element={<BasicUserInformation />} />
             <Route path="/matching" element={<Matching />} />
             <Route path="/matchingResult" element={<MatchingResult />} />
             <Route path="/matchingDetails" element={<MatchingDetails />} />

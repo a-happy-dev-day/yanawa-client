@@ -20,6 +20,8 @@ const Header = ({ title, bgColor, color }) => {
         backgroundColor: bgColor,
         color: color,
         zIndex: '10',
+        top: '0',
+        left: '0',
       }}
     >
       <ArrowBackIosNewIcon
