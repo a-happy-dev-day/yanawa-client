@@ -15,6 +15,7 @@ import Splash from './pages/Splash';
 import Login from './pages/Login';
 import BasicUserInformation from './pages/BasicUserInfomation';
 import Notice from "./pages/Notice";
+import Wish from "./pages/Wish";
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Route path="/reviewDetails" element={<ReviewDetails />} />
             <Route path="/setting" element={<Setting />} />
             <Route path="/notice" element={<Notice />} />
+            <Route path="/wish" element={<Wish />} />
           </Routes>
         </Box>
       </Container>

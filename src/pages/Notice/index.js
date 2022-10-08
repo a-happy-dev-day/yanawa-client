@@ -43,6 +43,6 @@ const Container = styled(Box)`
             height: 100vh;
             background: #f9f9f9;
             overflow: scroll;
-            padding-top: 80px;
+            padding-top: 80px; 
             `;
 
