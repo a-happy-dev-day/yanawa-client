@@ -1,16 +1,25 @@
-import React from 'react';
-import { Box, styled } from '@mui/material';
+import React, {useEffect} from 'react';
+import {Box, styled} from '@mui/material';
 
 import logo from '../../assets/images/splash/logo_white.png';
+import {useNavigate} from "react-router-dom";
 
 const Splash = () => {
-  return (
-    <Container>
-      <h1>
-        <img src={logo} alt="다나와" />
-      </h1>
-    </Container>
-  );
+    const navigate = useNavigate();
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            navigate('/login')
+        }, 1000)
+    },[])
+
+    return (
+        <Container>
+            <h1>
+                <img src={logo} alt="다나와"/>
+            </h1>
+        </Container>
+    );
 };
 
 export default Splash;

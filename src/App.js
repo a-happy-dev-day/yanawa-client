@@ -15,8 +15,11 @@ import Splash from './pages/Splash';
 import Login from './pages/Login';
 import BasicUserInformation from './pages/BasicUserInfomation';
 import Home from './pages/home';
+import Notice from "./pages/Notice";
+import Wish from "./pages/Wish";
 
 function App() {
+
   return (
     <div style={{ backgroundColor: '#E8E8E8' }}>
       <CssBaseline />
@@ -38,6 +41,8 @@ function App() {
             <Route path="/review" element={<Review />} />
             <Route path="/reviewDetails" element={<ReviewDetails />} />
             <Route path="/setting" element={<Setting />} />
+            <Route path="/notice" element={<Notice />} />
+            <Route path="/wish" element={<Wish />} />
           </Routes>
         </Box>
       </Container>
