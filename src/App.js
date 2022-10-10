@@ -14,7 +14,7 @@ import Setting from './pages/setting';
 import Splash from './pages/Splash';
 import Login from './pages/Login';
 import BasicUserInformation from './pages/BasicUserInfomation';
-
+import Home from './pages/home';
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
             <Route path="/" element={<Splash />} />
             <Route path="/login" element={<Login />} />
             <Route path="/userInfo" element={<BasicUserInformation />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/matching" element={<Matching />} />
             <Route path="/matchingResult" element={<MatchingResult />} />
             <Route path="/matchingDetails" element={<MatchingDetails />} />
